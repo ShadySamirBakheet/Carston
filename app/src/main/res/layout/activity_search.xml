@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.search.SearchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/toolBarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                style="@style/toolBarImage"
+                android:padding="10dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back"/>
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/goSearch"
+                android:layout_toEndOf="@id/back_btn"
+                android:text="1280 Models" />
+
+            <ImageView
+                android:id="@+id/goSearch"
+                style="@style/toolBarImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="false"
+                android:layout_toStartOf="@id/goFav"
+                android:padding="10dp"
+                android:src="@drawable/ic_search" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_alignParentEnd="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/btnColor1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="12"
+                    android:textStyle="bold"
+                    android:textSize="8dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/goFav"
+                style="@style/toolBarImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_heart_outline" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/filterCon"
+        android:padding="8dp"
+        android:layout_below="@id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/filterBtn"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_filter"
+            android:padding="10dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/btn_app3"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/filterList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:nestedScrollingEnabled="false"
+            app:spanCount="8"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_filter_search"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/searchCon"
+        android:visibility="gone"
+        android:layout_margin="8dp"
+        android:layout_below="@id/filterCon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            android:hint="@string/search"
+            android:textColorHint="@color/txtColor1"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="@color/txtColor1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="@color/txtColor1"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_search"
+            android:padding="10dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/btn_app3"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchCon"
+        tools:listitem="@layout/item_search" />
+
+</RelativeLayout>

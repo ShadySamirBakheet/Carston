@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".views.news_reviews.StoryViewActivity">
+
+    <LinearLayout
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progTime"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:progress="20"
+            android:layout_margin="2dp"
+            style="@style/MyProgressBarOne"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/black"/>
+
+        <ProgressBar
+            android:id="@+id/progTime2"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:progress="20"
+            android:layout_margin="2dp"
+            android:visibility="gone"
+            style="@style/MyProgressBarOne"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/black"/>
+
+        <ProgressBar
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:progress="20"
+            android:layout_margin="2dp"
+            android:visibility="gone"
+            style="@style/MyProgressBarOne"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/black"/>
+
+        <ProgressBar
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:progress="20"
+            android:visibility="gone"
+            android:layout_margin="2dp"
+            style="@style/MyProgressBarOne"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/black"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/profileCon"
+        android:padding="8dp"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:id="@+id/userImgCon"
+            android:layout_margin="4dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="25dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_image"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_toEndOf="@id/userImgCon"
+            android:layout_toStartOf="@id/menuStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/userName"
+                android:padding="4dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Name"/>
+
+            <TextView
+                android:id="@+id/timeAge"
+                android:textAlignment="viewStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/userName"
+                android:layout_toStartOf="@id/goNextProfile"
+                android:layout_toEndOf="@id/userImgCon"
+                android:padding="4dp"
+                android:singleLine="true"
+                android:text="12 minutes ago"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/menuStory"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_menu"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/storyImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/image1"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="40dp"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#14000000"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:text="Vola Automobile – Mobile App UI Kit for Sketch App dedicated for Buy, Sell, Rent, News, Reviews for your Dream Car"/>
+
+</RelativeLayout>

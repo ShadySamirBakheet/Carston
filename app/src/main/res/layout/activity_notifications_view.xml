@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.notifications.NotificationsViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                style="@style/toolBarImage"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"
+                android:text="Notification View"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Google Fonts"
+                android:textColor="@color/txtColor1"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgItem"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/subject"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image2" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_below="@id/imgItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:lineSpacingExtra="8dp"
+                android:padding="8dp"
+                android:text="11 May 2021"
+                android:gravity="center_vertical"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/txtColor4"
+                android:drawableEnd="@drawable/ic_date"
+                android:textColor="@color/txtColor4"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:padding="8dp"
+                android:text="@string/vola_automobile_mobile_app_ui_kit_for_sketch_app_vola_automobile_mobile_app_ui_kit_for_sketch_app_dedicated_for_buy_sell_rent_news_reviews_for_your_dream_car_list_of_files_vola_automobile_app_sketch_including_26_app_screens_features_26_premium_ios_and_android_screens_in_iphone_6_or_higher_version_resolution_375_812px_ios_and_android_compatible_100_customizable_ui_elements_fully_vector_layers_responsive_layer_structure_sketch_50_0_compatible"
+                android:textColor="@color/txtColor4"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

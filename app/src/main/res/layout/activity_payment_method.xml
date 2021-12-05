@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.payments.PaymentMethodActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/toolBarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                style="@style/toolBarImage"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/goNotify"
+                android:layout_toEndOf="@id/back_btn"
+                android:text="@string/payment"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_alignParentEnd="true"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/btnColor1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="12"
+                    android:textStyle="bold"
+                    android:textSize="8dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/goNotify"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:padding="5dp"
+                android:src="@drawable/ic_notifications"
+                style="@style/toolBarImage"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:id="@+id/paymentMethodCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/paymentMethodList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:id="@+id/paymentInfoCon"
+                android:layout_below="@id/paymentMethodCon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="@string/credit_card"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:textColor="@color/txtColor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.cardview.widget.CardView
+                        app:cardBackgroundColor="@color/cardBackgroundColor"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/card_number"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="16dp"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:layout_toStartOf="@id/resetFilters"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/back_btn"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:padding="8dp"
+                                android:hint="@string/card_number"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            app:cardBackgroundColor="@color/cardBackgroundColor"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:padding="8dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/expiry_validity"
+                                    android:textColor="@color/txtColor1"
+                                    android:textSize="16dp"
+                                    android:padding="8dp"
+                                    android:textStyle="bold"
+                                    android:layout_toStartOf="@id/resetFilters"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/back_btn"/>
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="text"
+                                    android:padding="8dp"
+                                    android:hint="@string/expiry_validity"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/txtColor1"
+                                    android:textSize="18dp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/cardBackgroundColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:padding="8dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="CVV"
+                                    android:textColor="@color/txtColor1"
+                                    android:textSize="16dp"
+                                    android:padding="8dp"
+                                    android:textStyle="bold"
+                                    android:layout_toStartOf="@id/resetFilters"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/back_btn"/>
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="text"
+                                    android:padding="8dp"
+                                    android:hint="CVV"
+                                    android:background="@android:color/transparent"
+                                    android:textColor="@color/txtColor1"
+                                    android:textSize="18dp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/cardBackgroundColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/name_of_card"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="16dp"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:layout_toStartOf="@id/resetFilters"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/back_btn"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:padding="8dp"
+                                android:hint="@string/name_of_card"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <CheckBox
+                        android:layout_marginVertical="8dp"
+                        android:textSize="16dp"
+                        app:useMaterialThemeColors="true"
+                        app:buttonTint="@color/txtColor3"
+                        android:textColor="@color/txtColor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/save_this_card_for_future_payment_reference"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/goNext"
+                style="@style/btnStyleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@id/paymentInfoCon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/btn_app"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:paddingHorizontal="32dp"
+                android:text="@string/pay_securely"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/ic_security"
+                app:drawableTint="@color/white" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

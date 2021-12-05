@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="false"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.cars.ui.CarViewFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/conColor2"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="false"
+            app:sliderIndicatorGravity="start|bottom"
+            app:sliderIndicatorMarginBottom="40dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorRadius="3dp"
+            app:sliderIndicatorRtlMode="auto"
+            app:sliderScrollTimeInSec="1"
+            app:sliderStartAutoCycle="true" />
+
+        <TextView
+            android:id="@+id/countPhotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageSlider"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="-46dp"
+            android:background="#75000000"
+            android:elevation="5dp"
+            android:padding="4dp"
+            android:text="34 Photos"
+            android:drawableStart="@drawable/ic_image"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:drawablePadding="4dp"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/detailsCon"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/itemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Car Full Name"
+                    android:padding="4dp"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:id="@+id/reviewCon"
+                    android:layout_below="@id/itemName"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RatingBar
+                        android:id="@+id/rateItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="4.5"
+                        android:stepSize=".1"
+                        android:progressBackgroundTint="@color/loginColor1"
+                        android:progressTint="@color/conColor6"
+                        android:layout_margin="4dp"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_below="@id/itemName"/>
+
+                    <TextView
+                        android:layout_below="@id/itemName"
+                        android:layout_toEndOf="@id/rateItem"
+                        android:padding="4dp"
+                        android:text="4.5"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="14dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_below="@id/itemName"
+                        android:layout_toEndOf="@id/rateItem"
+                        android:padding="4dp"
+                        android:text="@string/based_on"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_below="@id/itemName"
+                        android:layout_toEndOf="@id/rateItem"
+                        android:padding="4dp"
+                        android:text="345 Reviews"
+                        android:textColor="@color/txtColor3"
+                        android:textSize="13dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/priceItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/reviewCon"
+                    android:padding="4dp"
+                    android:text="From $91.000.000"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/modelItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/priceItem"
+                    android:padding="4dp"
+                    android:text="EMI start @ $1999/~"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="13dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/modelItem"
+                    android:gravity="center"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/btnCall"
+                        style="@style/btnStyleHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/btn_app2"
+                        android:text="@string/call_john"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/btnStyleHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/btn_app"
+                        android:gravity="center"
+                        android:text="@string/make_an_offer"
+                        android:textSize="17dp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginVertical="4dp"
+            android:id="@+id/userInfoCon"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_below="@id/detailsCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:id="@+id/btnSeller"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgCon"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user_image"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/imgCon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:textColor="@color/txtColor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Shady Samir"/>
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:padding="8dp"
+                        android:textColor="@color/txtColor1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Privte Saller"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_next"
+                    app:tint="@color/txtColor1" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginVertical="4dp"
+            android:id="@+id/specificationsCon"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_below="@id/userInfoCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/titleSpec"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:textColor="@color/txtColor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/specifications"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/specificationsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleSpec"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_specification" />
+
+
+                <TextView
+                    android:layout_below="@id/specificationsList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor5"
+                    android:textSize="16dp"
+                    android:padding="4dp"
+                    android:drawableEnd="@drawable/ic_next"
+                    android:drawableTint="@color/txtColor5"
+                    android:gravity="center"
+                    android:drawablePadding="4dp"
+                    android:text="@string/view_all_specifications"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginVertical="4dp"
+            android:id="@+id/featuresCon"
+            android:layout_below="@id/specificationsCon"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/titleFeatures"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:textColor="@color/txtColor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/features"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/featuresList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleFeatures"
+                    android:orientation="horizontal"
+                    android:paddingVertical="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_specification" />
+
+
+                <TextView
+                    android:layout_below="@id/featuresList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor5"
+                    android:textSize="16dp"
+                    android:padding="4dp"
+                    android:drawableEnd="@drawable/ic_next"
+                    android:drawableTint="@color/txtColor5"
+                    android:gravity="center"
+                    android:drawablePadding="4dp"
+                    android:text="@string/view_all_features"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginVertical="4dp"
+            android:id="@+id/compareCon"
+            android:layout_below="@id/featuresCon"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/titleCompare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="@string/similar_cars"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/compareList"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_below="@id/titleCompare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_variant"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor5"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="16dp"
+                    android:padding="4dp"
+                    android:drawableEnd="@drawable/ic_next"
+                    android:drawableTint="@color/txtColor5"
+                    android:gravity="center"
+                    android:drawablePadding="4dp"
+                    android:text="@string/see_all"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</ScrollView>

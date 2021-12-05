@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imgItem"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image5" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgItem"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="18dp"
+            android:background="@color/black"
+            android:padding="4dp"
+            android:text="Good Car"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/titleItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:text="BMW i3"
+            android:textColor="@color/txtColor1"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_below="@id/titleItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:textSize="12dp"
+            android:textColor="@color/txtColor4"
+            android:text="Discover innovative design, electrified driving dynamics, optimised range and intelligent technologies."/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

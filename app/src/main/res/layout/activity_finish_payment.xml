@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.payments.FinishPaymentActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <LinearLayout
+            android:id="@+id/firstCon"
+            android:padding="48dp"
+            android:gravity="center"
+            android:background="#10B110"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_verified"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/awesome"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleItem"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="@string/your_payment_is_successful"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/background"
+            android:layout_marginTop="-20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/firstCon"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/booking_details"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/blue_car" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/titleItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp"
+                        android:text="Car name with short desc"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/bodyItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleItem"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:text="$150/Day"
+                        android:gravity="center"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/descItem"
+                        android:layout_below="@id/bodyItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp"
+                        android:gravity="center"
+                        android:textSize="12dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/txtColor4"
+                        android:text="5 Seance . Desalt . Automatic"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_below="@id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="5dp"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="@color/cardBackgroundColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:padding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pickup_drop_off_location"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="16dp"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:layout_toStartOf="@id/resetFilters"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/back_btn"/>
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:padding="8dp"
+                                android:hint="@string/pickup_drop_off_location"
+                                android:background="@android:color/transparent"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                app:cardBackgroundColor="@color/cardBackgroundColor"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toStartOf="@id/resetFilters"
+                                        android:layout_toEndOf="@id/back_btn"
+                                        android:padding="8dp"
+                                        android:text="@string/start_date"
+                                        android:textColor="@color/txtColor1"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/startDate"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="text"
+                                        android:padding="8dp"
+                                        android:text="20 Nev 2021, 10:00PM"
+                                        android:textColor="@color/txtColor1"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                app:cardBackgroundColor="@color/cardBackgroundColor"
+                                android:layout_weight="1">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:padding="8dp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toStartOf="@id/resetFilters"
+                                        android:layout_toEndOf="@id/back_btn"
+                                        android:padding="8dp"
+                                        android:text="@string/end_date"
+                                        android:textColor="@color/txtColor1"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/endDate"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:inputType="text"
+                                        android:padding="8dp"
+                                        android:text="22 Nev 2021, 10:00PM"
+                                        android:textColor="@color/txtColor1"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:cardCornerRadius="15dp"
+                            android:layout_centerInParent="true"
+                            app:cardElevation="10dp"
+                            app:contentPadding="5dp"
+                            app:cardBackgroundColor="@color/black">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_next"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/cardBackgroundColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:padding="8dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/payment_method"
+                                    android:textColor="@color/txtColor1"
+                                    android:textSize="15dp"
+                                    android:singleLine="true"
+                                    android:padding="8dp"
+                                    android:textStyle="bold"
+                                    android:layout_toStartOf="@id/resetFilters"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/back_btn"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="text"
+                                    android:padding="8dp"
+                                    android:text="@string/credit_card"
+                                    android:textColor="@color/txtColor4"
+                                    android:textSize="16dp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/cardBackgroundColor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:padding="8dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/paid_amount"
+                                    android:textColor="@color/txtColor1"
+                                    android:textSize="15dp"
+                                    android:padding="8dp"
+                                    android:textStyle="bold"
+                                    android:layout_toStartOf="@id/resetFilters"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/back_btn"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="text"
+                                    android:padding="8dp"
+                                    android:text="$950"
+                                    android:textColor="@color/txtColor4"
+                                    android:textSize="16dp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/goNext"
+                    style="@style/btnStyleHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/btn_app"
+                    android:gravity="center"
+                    android:paddingHorizontal="32dp"
+                    android:text="@string/done"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_margin="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="16dp"
+            android:textColor="@color/txtColor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMW"/>
+
+        <ImageView
+            android:id="@+id/imgItem"
+            android:layout_marginStart="8dp"
+            android:layout_width="40dp"
+            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_clear"
+            app:tint="@color/txtColor1" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

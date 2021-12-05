@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/txtColor1"
+            android:padding="8dp"
+            android:layout_margin="8dp"
+            android:text="@string/select_budget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/filterPriceList"
+            tools:itemCount="4"
+            android:layout_margin="8dp"
+            android:nestedScrollingEnabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_price_filter"/>
+
+        <TextView
+            style="@style/btnStyleHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn_app3"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="16dp"
+            android:text="@string/apply"
+            android:textColor="@color/txtColor2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

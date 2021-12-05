@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.home.ui.HomeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:alpha="0"
+        android:elevation="5dp"
+        android:background="@color/toolBarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/app_name" />
+
+            <ImageView
+                android:id="@+id/goHome"
+                android:layout_alignParentEnd="true"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"/>
+
+            <ImageView
+                android:id="@+id/goSearch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="false"
+                android:src="@drawable/ic_search"
+                android:padding="10dp"
+                style="@style/toolBarImage"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/conMain"
+        android:nestedScrollingEnabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:background="@color/conColor2"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="start|bottom"
+                app:sliderIndicatorMarginBottom="40dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorRadius="3dp"
+                app:sliderIndicatorRtlMode="auto"
+                app:sliderIndicatorSelectedColor="@color/conColor6"
+                app:sliderIndicatorUnselectedColor="@color/white"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+
+                    <TextView
+                        style="@style/toolBarTitle"
+                        android:textColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/app_name" />
+
+                    <ImageView
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/logo"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnSearch"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="@drawable/btnborder2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/txtColor4" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:textSize="16dp"
+                        android:layout_weight="1"
+                        android:paddingEnd="8dp"
+                        android:textColorHint="@color/txtColor4"
+                        android:inputType="textPersonName"
+                        android:hint="@string/enter_brand_to_search"
+                        android:textColor="@color/txtColor1"
+                        android:background="@android:color/transparent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/brandList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageSlider"
+                android:layout_marginTop="-30dp"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:padding="4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_brand" />
+
+            <RelativeLayout
+                android:layout_below="@id/brandList"
+                android:padding="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con1"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/cardBackgroundColor">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/goNewCar"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:background="@drawable/con_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp"
+                                android:text="@string/popular_new_cars"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/txtColor5"
+                                android:textSize="16dp"
+                                android:drawableEnd="@drawable/ic_next"
+                                android:drawableTint="@color/txtColor5"
+                                android:gravity="center"
+                                android:drawablePadding="4dp"
+                                android:text="@string/see_all"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/popularList"
+                            android:nestedScrollingEnabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_popular_car"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con2"
+                    android:layout_below="@id/con1"
+                    android:layout_margin="4dp"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/goUsedCar"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:background="@drawable/con_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp"
+                                android:text="@string/top_used_cars"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/txtColor5"
+                                android:textSize="16dp"
+                                android:drawableEnd="@drawable/ic_next"
+                                android:drawableTint="@color/txtColor5"
+                                android:gravity="center"
+                                android:drawablePadding="4dp"
+                                android:text="@string/see_all"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/topList"
+                            android:nestedScrollingEnabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_popular_car"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con3"
+                    android:layout_below="@id/con2"
+                    android:layout_margin="4dp"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_height="250dp"
+                            android:src="@drawable/sell_car"/>
+
+                        <LinearLayout
+                            android:padding="16dp"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="20dp"
+                                android:padding="8dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/txtColor1"
+                                android:text="@string/sell_your_car_online_for_free"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="16dp"
+                                android:padding="8dp"
+                                android:textColor="@color/txtColor1"
+                                android:text="@string/instant_online_quote_nfree_doorstep_inspection_nsame_day_payment"/>
+
+                            <TextView
+                                android:id="@+id/btnCreatePayCar"
+                                style="@style/btnStyleHome"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:background="@drawable/btn_app3"
+                                android:gravity="center"
+                                android:paddingVertical="12dp"
+                                android:paddingHorizontal="32dp"
+                                android:text="@string/get_started"
+                                android:textSize="17dp" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con4"
+                    android:layout_below="@id/con3"
+                    android:layout_margin="4dp"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/btnExpert"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:background="@drawable/con_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp"
+                                android:text="@string/expert_reviews"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/txtColor5"
+                                android:textSize="16dp"
+                                android:drawableEnd="@drawable/ic_next"
+                                android:drawableTint="@color/txtColor5"
+                                android:gravity="center"
+                                android:drawablePadding="4dp"
+                                android:text="@string/see_all"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/expertList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_popular_car"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con5"
+                    android:layout_below="@id/con4"
+                    android:layout_margin="4dp"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/btnBody"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:background="@drawable/con_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp"
+                                android:text="@string/new_car_by_body_type"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/txtColor5"
+                                android:textSize="16dp"
+                                android:drawableEnd="@drawable/ic_next"
+                                android:drawableTint="@color/txtColor5"
+                                android:gravity="center"
+                                android:drawablePadding="4dp"
+                                android:text="@string/see_all"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/bodyCarList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:spanCount="6"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:listitem="@layout/item_body_car"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con6"
+                    android:layout_below="@id/con5"
+                    android:layout_margin="4dp"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/videosCon"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:background="@drawable/con_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp"
+                                android:text="@string/videos"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/txtColor5"
+                                android:textSize="16dp"
+                                android:drawableEnd="@drawable/ic_next"
+                                android:drawableTint="@color/txtColor5"
+                                android:gravity="center"
+                                android:drawablePadding="4dp"
+                                android:text="@string/see_all"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/videoList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:spanCount="6"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:listitem="@layout/item_body_car"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/con7"
+                    app:cardBackgroundColor="@color/cardBackgroundColor"
+                    android:layout_below="@id/con6"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/newsCon"
+                            android:padding="16dp"
+                            android:clickable="true"
+                            android:background="@drawable/con_app"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/txtColor1"
+                                android:textSize="18dp"
+                                android:text="@string/trending_news"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/txtColor5"
+                                android:textSize="16dp"
+                                android:drawableEnd="@drawable/ic_next"
+                                android:drawableTint="@color/txtColor5"
+                                android:gravity="center"
+                                android:drawablePadding="4dp"
+                                android:text="@string/see_all"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/newsList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:spanCount="6"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:listitem="@layout/item_body_car"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

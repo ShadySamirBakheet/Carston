@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.create_listing.CreateListingStepThreeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/toolBarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                style="@style/toolBarImage"
+                android:padding="10dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back"/>
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_listing"
+                style="@style/toolBarTitle"
+                android:layout_toStartOf="@id/resetFilters"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"/>
+
+            <TextView
+                android:id="@+id/resetFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="Step 3/3"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:layout_below="@id/toolbar"
+        style="@style/MyProgressBarTwo"
+        android:progressTint="@color/btnColor1"
+        android:progress="99"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_personal_details"
+                android:textColor="@color/txtColor1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:padding="16dp"
+                android:layout_toStartOf="@id/resetFilters"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/enter_your_name"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:padding="8dp"
+                        android:hint="@string/enter_your_name"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/enter_your_phone"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone|number"
+                        android:textAlignment="viewStart"
+                        android:padding="8dp"
+                        android:hint="@string/enter_your_phone"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/enter_your_address"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:hint="@string/enter_your_address"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/enter_your_address_2"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:padding="8dp"
+                        android:hint="@string/enter_your_address"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/goNext"
+                style="@style/btnStyleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="24dp"
+                android:background="@drawable/btn_app"
+                android:gravity="center"
+                android:paddingHorizontal="32dp"
+                android:text="@string/finish"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

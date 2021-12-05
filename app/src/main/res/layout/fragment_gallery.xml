@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="false"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.cars.ui.GalleryFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginVertical="4dp"
+            android:id="@+id/galleryCon"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/titlePictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/pictures"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor5"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="16dp"
+                    android:padding="20dp"
+                    android:gravity="center"
+                    android:text="@string/see_all"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/picturesList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titlePictures"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    tools:itemCount="9"
+                    tools:listitem="@layout/item_car_img" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@id/galleryCon"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="@color/cardBackgroundColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/videosCon"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:background="@drawable/con_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp"
+                        android:text="@string/videos"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/txtColor5"
+                        android:textSize="16dp"
+                        android:drawableEnd="@drawable/ic_next"
+                        android:drawableTint="@color/txtColor5"
+                        android:gravity="center"
+                        android:drawablePadding="4dp"
+                        android:text="@string/see_all"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/videoList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/videosCon"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="6"
+                    tools:listitem="@layout/item_body_car" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</ScrollView>

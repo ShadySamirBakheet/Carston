@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin=".1dp">
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/blue_car" />
+
+        <LinearLayout
+            android:layout_toEndOf="@id/image"
+            android:layout_toStartOf="@id/itemCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/txtColor4"
+                android:padding="4dp"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="14.2 kmpl"
+                android:textStyle="bold"
+                android:textColor="@color/txtColor1"
+                android:padding="4dp"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/itemCheck"
+            app:useMaterialThemeColors="true"
+            app:buttonTint="@color/txtColor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

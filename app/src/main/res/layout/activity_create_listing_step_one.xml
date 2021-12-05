@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.create_listing.CreateListingStepOneActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/toolBarColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                style="@style/toolBarImage"
+                android:padding="10dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back"/>
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_listing"
+                style="@style/toolBarTitle"
+                android:layout_toStartOf="@id/resetFilters"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"/>
+
+            <TextView
+                android:id="@+id/resetFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="Step 1/3"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:layout_below="@id/toolbar"
+        style="@style/MyProgressBarTwo"
+        android:progressTint="@color/btnColor1"
+        android:progress="33"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="8dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_basic_vehicle_details"
+                android:textColor="@color/txtColor1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:padding="16dp"
+                android:layout_toStartOf="@id/resetFilters"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_basic_vehicle_details"
+                android:textColor="@color/txtColor4"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp"
+                android:layout_toStartOf="@id/resetFilters"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"/>
+
+            <LinearLayout
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/individual"
+                    app:useMaterialThemeColors="true"
+                    app:buttonTint="@color/txtColor3"
+                    android:layout_margin="4dp"
+                    android:text="@string/individual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/dealer"
+                    app:useMaterialThemeColors="true"
+                    app:buttonTint="@color/txtColor3"
+                    android:layout_margin="4dp"
+                    android:text="@string/dealer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_info"
+                android:textColor="@color/txtColor4"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toStartOf="@id/resetFilters"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back_btn"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/license_plate"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:hint="@string/license_plate"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/registration_year"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        android:hint="@string/registration_year"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transmission"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:hint="@string/transmission"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mileage_km"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        android:hint="@string/mileage_km"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/owner"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:hint="@string/owner"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/goNext"
+                style="@style/btnStyleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="24dp"
+                android:background="@drawable/btn_app"
+                android:gravity="center"
+                android:paddingHorizontal="32dp"
+                android:text="@string/next_step"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

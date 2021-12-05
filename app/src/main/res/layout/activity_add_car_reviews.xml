@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.news_reviews.AddCarReviewsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                style="@style/toolBarImage"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/toolBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/goNotify"
+                android:layout_toEndOf="@id/back_btn"
+                android:text="Review Car Name"
+                android:textColor="@color/white" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_alignParentEnd="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:cardCornerRadius="10dp"
+                android:layout_margin="4dp"
+                app:cardBackgroundColor="@color/btnColor1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="12"
+                    android:textStyle="bold"
+                    android:textSize="8dp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/goNotify"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_notifications"
+                app:tint="@color/white" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="16dp"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/blue_car"/>
+
+                <TextView
+                    android:layout_margin="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:text="@string/app_name"/>
+
+                <TextView
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:text="@string/rate_us_to_ensure_better_service"/>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                app:cardCornerRadius="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp"
+                        android:text="@string/rate_the_appearance_of_the_application"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingApperarance"
+                        android:layout_margin="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:saveEnabled="true"
+                        android:stepSize=".1"
+                        android:progressTint="@color/btnColor1"
+                        android:progressBackgroundTint="@color/conColor6"
+                        android:numStars="5"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/cardBackgroundColor"
+                app:cardCornerRadius="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/typing_review"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="16dp"
+                        android:padding="8dp"
+                        android:textStyle="bold"
+                        android:layout_toStartOf="@id/resetFilters"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/back_btn"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:hint="@string/typing_review"
+                        android:background="@android:color/transparent"
+                        android:textColor="@color/txtColor1"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/btnSubmit"
+                style="@style/btnStyleHome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="24dp"
+                android:background="@drawable/btn_app"
+                android:gravity="center"
+                android:paddingHorizontal="32dp"
+                android:text="@string/save"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
